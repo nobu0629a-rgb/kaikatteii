@@ -6,44 +6,46 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>買っていい？AI</title>
 
-<style>
+</head>
 
-*{box-sizing:border-box}
+<body>
 
-body{
+<h1>🛒 買っていい？AI</h1><p>その買い物、本当に買っていい？</p>
 
-  margin:0;
+<label>何を買いたい？</label>
 
-  font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+<input id="item" placeholder="例：ヘッドホン">
 
-  background:#f5f6f8;
+<label>値段はいくら？</label>
 
-  color:#222;
+<input id="price" type="number" placeholder="30000">
 
-}
+<label>なぜ欲しい？</label>
 
-.container{
+<textarea id="reason"></textarea>
 
-  max-width:500px;
+<button onclick="judge()">買っていい？判定する</button><div id="result"></div>
 
-  margin:auto;
+<script>
 
-  padding:24px 18px 40px;
+function judge(){
 
-}
+var p=Number(document.getElementById("price").value);
 
-h1{
+var r=document.getElementById("result");
 
-  text-align:center;
+if(!p){r.innerHTML="金額を入力してね";return;}
 
-  margin:20px 0 8px;
-
-  font-size:32px;
+r.innerHTML=p<=5000?"🟢 買ってOK！":"🟡 ちょっと考えよう！";
 
 }
 
-.subtitl
+</script>
+
+</body>
+
+</html>
